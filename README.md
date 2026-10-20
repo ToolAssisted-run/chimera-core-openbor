@@ -9,7 +9,9 @@ engine, built for Chimera's sandbox, and produces one file,
 
 ## Status
 
-New, and not published yet.
+Published: each push to `main` that passes the tests publishes a `dev`
+release, and a dated nightly is made once a day when `main` moved. Chimera's
+Core Manager lists it.
 
 - OpenBOR at its current development version (build 8027), with its own
   software renderer and mixer: the picture is what OpenBOR draws, the sound
