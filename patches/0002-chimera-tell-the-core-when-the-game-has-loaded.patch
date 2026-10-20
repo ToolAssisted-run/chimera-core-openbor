@@ -1,0 +1,42 @@
+From: Sergio Martin
+Subject: [PATCH] chimera: tell the core when the game has loaded, and why it stops
+
+Two calls into the core, built only for it (CHIMERA_CORE): one after
+startup() has loaded the game, so the core can finish loading there and
+a game that cannot load is refused when it is opened; and one at the start
+of borShutdown(), with the reason OpenBOR gives for stopping.
+---
+diff --git a/engine/openbor.c b/engine/openbor.c
+--- a/engine/openbor.c
++++ b/engine/openbor.c
+@@ -51942,6 +51942,16 @@ void borShutdown(int status, const char *msg, ...)
+     shuttingdown = 1;
+     va_start(arglist, msg);
+ 
++#ifdef CHIMERA_CORE
++    // chimera: the core says why the game stopped
++    {
++        extern void chimera_bor_shutdown(int status, const char *msg, va_list arguments);
++        va_copy(output_arguments, arglist);
++        chimera_bor_shutdown(status, msg, output_arguments);
++        va_end(output_arguments);
++    }
++#endif
++
+     //printf("savedata.logo %d\n", savedata.logo);
+ 
+     if(!disablelog)
+@@ -56498,6 +56508,13 @@ void openborMain(int argc, char **argv)
+     printf("Game Selected: %s\n\n", packfile);
+     loadsettings();
+     startup();
++#ifdef CHIMERA_CORE
++    // chimera: the game is loaded; the machine's first frame is next
++    {
++        extern void chimera_bor_started(void);
++        chimera_bor_started();
++    }
++#endif
+ 	bothnewkeys = 0;
+ 
+     if(skiptoset < 0)

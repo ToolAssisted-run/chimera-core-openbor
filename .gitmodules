@@ -1,0 +1,18 @@
+[submodule "extern/openbor"]
+	path = extern/openbor
+	url = https://github.com/DCurrent/openbor.git
+[submodule "extern/SDL"]
+	path = extern/SDL
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "extern/ogg"]
+	path = extern/ogg
+	url = https://github.com/xiph/ogg.git
+[submodule "extern/vorbis"]
+	path = extern/vorbis
+	url = https://github.com/xiph/vorbis.git
+[submodule "extern/zlib"]
+	path = extern/zlib
+	url = https://github.com/madler/zlib.git
+[submodule "extern/libpng"]
+	path = extern/libpng
+	url = https://github.com/pnggroup/libpng.git

@@ -1,0 +1,64 @@
+{
+  "package": "openbor",
+  "effectiveTerms": "BSD-3-Clause for OpenBOR; MIT for this core; zlib licence for SDL 2 and zlib; the PNG Reference Library License version 2 for libpng; BSD-3-Clause for libogg and libvorbis",
+  "commercialUse": "allowed",
+  "note": "The built core combines this repository's code (MIT): the driver, the seams and the build in waterbox/, and the patches in patches/; OpenBOR (BSD-3-Clause), compiled from the submodule extern/openbor with the patches applied; and the libraries OpenBOR is built with, each compiled from its own submodule: SDL 2 (zlib), zlib (zlib), libpng (PNG Reference Library License version 2), libogg and libvorbis (BSD-3-Clause). The package carries no game: the user opens their own .pak. OpenBOR's licence asks that a binary carry its notice; it is in the package with the others.",
+  "components": [
+    {
+      "name": "chimera-core-openbor (the driver and the build)",
+      "license": "MIT",
+      "url": "https://github.com/ToolAssisted-run/chimera-core-openbor",
+      "commit": "{selfCommit}",
+      "file": "LICENSE",
+      "sourceUrl": "https://github.com/ToolAssisted-run/chimera-core-openbor/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "OpenBOR",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/DCurrent/openbor",
+      "commit": "{submodule:extern/openbor}",
+      "file": "extern/openbor/LICENSE",
+      "sourceUrl": "https://github.com/DCurrent/openbor/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "SDL 2",
+      "license": "Zlib",
+      "url": "https://github.com/libsdl-org/SDL",
+      "commit": "{submodule:extern/SDL}",
+      "file": "extern/SDL/LICENSE.txt",
+      "sourceUrl": "https://github.com/libsdl-org/SDL/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "zlib",
+      "license": "Zlib",
+      "url": "https://github.com/madler/zlib",
+      "commit": "{submodule:extern/zlib}",
+      "file": "extern/zlib/LICENSE",
+      "sourceUrl": "https://github.com/madler/zlib/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "libpng",
+      "license": "libpng-2.0",
+      "url": "https://github.com/pnggroup/libpng",
+      "commit": "{submodule:extern/libpng}",
+      "file": "extern/libpng/LICENSE",
+      "sourceUrl": "https://github.com/pnggroup/libpng/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "libogg",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/xiph/ogg",
+      "commit": "{submodule:extern/ogg}",
+      "file": "extern/ogg/COPYING",
+      "sourceUrl": "https://github.com/xiph/ogg/archive/{commit}.tar.gz"
+    },
+    {
+      "name": "libvorbis",
+      "license": "BSD-3-Clause",
+      "url": "https://github.com/xiph/vorbis",
+      "commit": "{submodule:extern/vorbis}",
+      "file": "extern/vorbis/COPYING",
+      "sourceUrl": "https://github.com/xiph/vorbis/archive/{commit}.tar.gz"
+    }
+  ]
+}
