@@ -15,6 +15,9 @@
 #   turbo        the first half not read back: the rest the same, and the
 #                first half's pictures really not there
 #   teeth        the comparison sees Start pressed one frame later
+#   old pictures the same game with its pictures as GIF, PCX and BMP, the
+#                formats older OpenBOR builds took (chimera#342): it loads
+#                and plays to the same pictures, sound, steps and probe
 #   clock        the game's clock is frames: every 60 frames a second and 200
 #                of OpenBOR's ticks, the date starts at the Starting Clock
 #                setting, and the computer stalling between frames changes
@@ -141,6 +144,14 @@ if [ "$(value "$work/late.txt" videoHash)" != "$(value "$work/ontime.txt" videoH
 else
 	fail "teeth: Start one frame later gave the same pictures"
 fi
+
+echo "== old picture formats"
+mkdir -p "$work/old"
+python3 "$root/tests/make-test-pak.py" --legacy-pictures "$work/old/test.pak"
+printf '{"pack":["test.pak"]}' > "$work/old/slots"
+printf '{}' > "$work/old/settings"
+"$native" "$work/old" --frames $frames "${movie[@]}" > "$work/old.txt" 2> "$work/old.err"
+same "old pictures" "$work/old.txt" "$work/n.txt" "the game with its $(strings "$work/old/test.pak" | grep -cE '^data/.*[.](gif|pcx|bmp)$') pictures as GIF, PCX and BMP plays the $frames frames to the PNG game's pictures, sound, steps and probe"
 
 echo "== the clock"
 first="$(grep -m1 '^probe n=0 ' "$work/n.err")"

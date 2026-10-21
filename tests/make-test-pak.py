@@ -10,7 +10,13 @@ Writes an OpenBOR .pak (the PAK32 layout of OpenBOR's packfile.c): "PACK",
 format 0, the files one after another, then a table of
 [record size][offset][size][name] entries and the table's offset.
 
-Usage: make-test-pak.py <out.pak>
+Usage: make-test-pak.py [--legacy-pictures] <out.pak>
+
+--legacy-pictures writes the same game with its pictures as GIF, PCX and BMP
+files instead of PNG, the formats games made for older OpenBOR builds use
+(chimera#342): the hero's frames GIF, the box's BMP, the level's background
+PCX and its floor GIF, and the screens and fonts, which OpenBOR finds by name
+without an extension, a mix of the three. It plays exactly as the PNG game.
 """
 import math
 import struct
@@ -437,11 +443,142 @@ def pak(entries):
     return bytes(out)
 
 
+# ------------------------------------------------- older picture formats
+
+def unpng(data):
+    """(width, height, rows, palette) of a PNG png() wrote: one IDAT, filter 0"""
+    at, width, height, palette, idat = 8, 0, 0, [], b""
+    while at < len(data):
+        size, kind = struct.unpack(">I4s", data[at:at + 8])
+        body = data[at + 8:at + 8 + size]
+        if kind == b"IHDR":
+            width, height = struct.unpack(">II", body[:8])
+        elif kind == b"PLTE":
+            palette = [tuple(body[i:i + 3]) for i in range(0, len(body), 3)]
+        elif kind == b"IDAT":
+            idat += body
+        at += 12 + size
+    raw = zlib.decompress(idat)
+    rows = [list(raw[y * (width + 1) + 1:(y + 1) * (width + 1)]) for y in range(height)]
+    return width, height, rows, palette
+
+
+def gif(width, height, rows, palette):
+    """A GIF of 8-bit codes: a clear code every 250 pixels keeps every code
+    9 bits long, so no compression is needed, only the bit packing"""
+    pal = b"".join(bytes(c) for c in palette) + b"\0\0\0" * (256 - len(palette))
+    codes = []
+    pixels = [c for r in rows for c in r]
+    for i, c in enumerate(pixels):
+        if i % 250 == 0:
+            codes.append(256)
+        codes.append(c)
+    codes.append(257)
+    bits, nbits, packed = 0, 0, bytearray()
+    for c in codes:
+        bits |= c << nbits
+        nbits += 9
+        while nbits >= 8:
+            packed.append(bits & 0xFF)
+            bits >>= 8
+            nbits -= 8
+    if nbits:
+        packed.append(bits & 0xFF)
+    blocks = b"".join(bytes([len(packed[i:i + 255])]) + bytes(packed[i:i + 255]) for i in range(0, len(packed), 255))
+    return (b"GIF89a" + struct.pack("<HHBBB", width, height, 0xF7, 0, 0) + pal +
+            b"," + struct.pack("<HHHHB", 0, 0, width, height, 0) + bytes([8]) + blocks + b"\0;")
+
+
+def pcx(width, height, rows, palette):
+    """A PCX that OpenBOR reads as width by height: it takes xmax and ymax as
+    the size, one less each way than the file holds, so the file holds a
+    column and a row more (index 0)"""
+    stride = width + 1
+    header = struct.pack("<BBBBHHHHHH", 10, 5, 1, 8, 0, 0, width, height, 72, 72)
+    header += b"\0" * 48 + b"\0" + bytes([1]) + struct.pack("<HH", stride, 1) + b"\0" * 58
+    body = bytearray()
+    for y in range(height + 1):
+        line = (rows[y] if y < height else [0] * width) + [0]
+        x = 0
+        while x < len(line):
+            run = 1
+            while x + run < len(line) and line[x + run] == line[x] and run < 63:
+                run += 1
+            if run > 1 or line[x] >= 0xC0:
+                body += bytes([0xC0 | run, line[x]])
+            else:
+                body.append(line[x])
+            x += run
+    pal = b"".join(bytes(c) for c in palette) + b"\0\0\0" * (256 - len(palette))
+    return header + bytes(body) + b"\x0c" + pal
+
+
+def bmp(width, height, rows, palette):
+    """An 8-bit BMP, rows bottom up and padded to four bytes"""
+    stride = (width + 3) & ~3
+    pal = b"".join(bytes((c[2], c[1], c[0], 0)) for c in palette) + b"\0" * 4 * (256 - len(palette))
+    pixels = b"".join(bytes(rows[y]) + b"\0" * (stride - width) for y in range(height - 1, -1, -1))
+    start = 14 + 40 + 1024
+    return (b"BM" + struct.pack("<IIi", start + len(pixels), 0, start) +
+            struct.pack("<iiiHHiiiiii", 40, width, height, 1, 8, 0, len(pixels), 2835, 2835, 256, 0) + pal + pixels)
+
+
+# where each picture goes in the older formats, the first name that starts it
+# deciding (so a longer name comes before a shorter one it starts with); a
+# name not here stays PNG
+LEGACY = {
+    "data/chars/hero/": gif,
+    "data/chars/box/": bmp,
+    "data/bgs/field": pcx,
+    "data/bgs/floor": gif,
+    "data/bgs/logo": gif,
+    "data/bgs/titleb": bmp,
+    "data/bgs/title": pcx,
+    "data/bgs/select": gif,
+    "data/bgs/loading2": pcx,
+    "data/bgs/loading": gif,
+    "data/bgs/hiscore": bmp,
+    "data/bgs/complete": gif,
+    "data/bgs/unlockbg": pcx,
+    "data/sprites/shadow": gif,
+    "data/sprites/font": pcx,
+}
+
+
+def legacy(entries):
+    """The game's files with its pictures in the older formats, and the text
+    files naming them by their new names"""
+    renamed, out = {}, []
+    for name, data in entries:
+        if name.endswith(".png"):
+            stem = name[:-4]
+            make = next((f for prefix, f in LEGACY.items() if stem.startswith(prefix)), None)
+            if make is not None:
+                new = stem + "." + make.__name__
+                renamed[name] = new
+                out.append((new, make(*unpng(data))))
+                continue
+        out.append((name, data))
+    final = []
+    for name, data in out:
+        if name.endswith(".txt"):
+            text = data.decode()
+            for old, new in renamed.items():
+                text = text.replace(old, new)
+            data = text.encode()
+        final.append((name, data))
+    return final
+
+
 def main():
-    if len(sys.argv) != 2:
+    args = sys.argv[1:]
+    old = "--legacy-pictures" in args
+    args = [a for a in args if a != "--legacy-pictures"]
+    if len(args) != 1:
         sys.exit(__doc__)
-    with open(sys.argv[1], "wb") as f:
-        f.write(pak(list(files())))
+    entries = list(files())
+    with open(args[0], "wb") as f:
+        f.write(pak(legacy(entries) if old else entries))
 
 
 if __name__ == "__main__":

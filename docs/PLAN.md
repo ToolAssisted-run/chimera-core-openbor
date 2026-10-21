@@ -79,3 +79,35 @@ scrolls to them.
 
 Not tried: any published OpenBOR game; WebM cutscenes (not built: OpenBOR's
 WebM player needs libvpx and threads).
+
+## Older games' pictures load again (user-decided, 2026-10-21)
+
+**Found** (chimera#342). Final Fight LNS and Double Dragon Gold stopped
+loading: "Unable to load image file 'data/chars/misc/ticon.gif'" and "Error
+loading background ... 'data/bgs/loading'". On 2026-06-01 upstream removed
+still GIF, PCX and BMP pictures and kept PNG only (bd1033d5, "Remove legacy
+BMP, PCX, and still GIF image loading"), and the core builds a version after
+that. Games made for older OpenBOR builds use those formats for sprites,
+backgrounds and fonts, so they fail in today's upstream OpenBOR too.
+
+**Decided** (the owner, from three options: a separate core for older
+builds, moving the core back to before the removal, or telling players to
+convert their pictures to PNG): patch the readers back in. Patch 0003
+restores the GIF, PCX and BMP readers as they were before the removal,
+writing the engine's 32-bit palette as the PNG reader does; a picture named
+without an extension is looked for as .png, then .gif, .pcx and .bmp, as
+before. Upstream also stopped looking for the shadow and arrow sprites as
+.gif; without that a game whose shadows are GIF crashed on the player select
+screen, drawing a shadow that never loaded, so the patch looks for them as
+.gif when there is no .png, as before.
+
+**Measured.** `tests/make-test-pak.py --legacy-pictures` writes the test
+game with 30 of its pictures as GIF, PCX and BMP (the hero's frames GIF, the
+box's BMP, the level PCX and GIF, the screens, fonts and shadows a mix). The
+gate's test "old pictures" plays it for 1500 frames to exactly the PNG
+game's pictures, sound, steps and probe lines; the sandbox build gives the
+same pictures as the native one. Before the patch it stopped with "Unable to
+load image file 'data/chars/hero/stand.gif'", and with the readers back but
+not the shadows it crashed at the player select screen. The gate passes, 21
+of 21; the frontend tests, 5 of 5. The two games in the issue were not tried
+here.

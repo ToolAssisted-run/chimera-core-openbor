@@ -81,3 +81,6 @@ key a player newly presses.
   palette (OpenBOR takes every character's from the first).
 - "OpenBOR could not load the game: ...": the reason is OpenBOR's own, from
   its shutdown (patch 0002).
+- "Unable to load image file '....gif'" on an older game: upstream reads PNG
+  only since 2026-06-01; patch 0003 brings back GIF, PCX and BMP pictures
+  (docs/PLAN.md, chimera#342).
