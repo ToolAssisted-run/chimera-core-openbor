@@ -5,7 +5,7 @@ frontend for tool-assisted speedruns, that plays games made with
 **[OpenBOR](https://github.com/DCurrent/openbor)**, the open-source engine
 for 2D beat 'em ups (the continuation of Beats of Rage). It is OpenBOR's own
 engine, built for Chimera's sandbox, and produces one file,
-`openbor.chimeraCore`, that goes in Chimera's `Cores` folder.
+`openbor.chimeraCore`, that goes in Chimera's `cores` folder.
 
 ## Status
 

@@ -13,7 +13,8 @@
       meson setup "$mb/build/meson-cpp" "$mb" -Dguest_cpp=true && meson compile -C "$mb/build/meson-cpp"
 
 - For the frontend test: Chimera built (its `chimera-run` and its window,
-  `dotnet build source/gui/Chimera.sln -c Release`), mono and Xvfb.
+  built by `<chimera>/tools/ci-chimera.sh`). The window runs headless and
+  needs no display.
 
 ## Sources
 
@@ -49,9 +50,7 @@ From `waterbox/`, with `MB=<chimera>/extern/chimera-common-minibox`:
   `chimera-run` and through Chimera's window.
 - Chimera's contract tests, against the package's folder:
 
-      CHIMERA_CORES_DIR=<folder> dotnet test \
-        <chimera>/source/gui/Chimera.Tests.Client.Common/Chimera.Tests.Client.Common.csproj \
-        -c Release --filter "FullyQualifiedName~InstalledCorePackagesTests|FullyQualifiedName~MnemonicUniquenessTests"
+      CHIMERA_CORES_DIR=<folder> <chimera>/build/meson-linux/source/ui/test-packages
 
 The runners take a work folder holding what Chimera would mount: the .pak,
 a `slots` file (`{"pack":["test.pak"]}`, with `"savedata":[...]` for save
