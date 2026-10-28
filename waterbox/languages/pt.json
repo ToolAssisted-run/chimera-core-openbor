@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Não foi possível abrir o jogo (%1).",
+		"error.is_not_an_openbor_game": "%1 não é um jogo do OpenBOR (um arquivo .pak começa com PACK).",
+		"error.no_memory_for_the_game_s_stack": "Não há memória para a pilha do jogo.",
+		"error.openbor_could_not_load": "O OpenBOR não pôde carregar o jogo.",
+		"error.openbor_could_not_load_because": "O OpenBOR não pôde carregar o jogo: %1",
+		"error.openbor_did_not_finish_loading": "O OpenBOR não terminou de carregar o jogo em %1 quadros.",
+		"error.save_data_file_could_not_be_read": "Não foi possível ler o arquivo de dados salvos %1.",
+		"setting.starttime": "Relógio inicial",
+		"setting.starttime.about": "A data e a hora que o jogo lê ao iniciar, em segundos desde 1970 (hora Unix), em UTC; depois ele funciona junto com os quadros. O padrão é 1º de janeiro de 2000. Os números aleatórios do próprio OpenBOR não dependem dele, mas os scripts de um jogo podem ler a data. Faz parte da máquina, então um filme precisa do mesmo valor.",
+		"slot.pack": "Jogo",
+		"slot.pack.help": "O arquivo .pak do jogo (os jogos do OpenBOR são a sua pasta de dados empacotada num único .pak).",
+		"slot.savedata": "Dados salvos",
+		"slot.savedata.help": "Os arquivos de save do próprio OpenBOR para este jogo, como Exportar dados salvos os grava: <game>.cfg (as configurações, entre elas as teclas), <game>.sav (o progresso), <game>.hi (os recordes), <game>.scr (o que os scripts do jogo guardam). Os nomes precisam ser os do jogo: as configurações de test.pak são test.cfg. O jogo começa com eles."
+	}
+}

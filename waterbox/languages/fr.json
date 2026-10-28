@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Le jeu (%1) n'a pas pu être ouvert.",
+		"error.is_not_an_openbor_game": "%1 n'est pas un jeu OpenBOR (un fichier .pak commence par PACK).",
+		"error.no_memory_for_the_game_s_stack": "Il n'y a pas de mémoire pour la pile du jeu.",
+		"error.openbor_could_not_load": "OpenBOR n'a pas pu charger le jeu.",
+		"error.openbor_could_not_load_because": "OpenBOR n'a pas pu charger le jeu : %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR n'a pas fini de charger le jeu en %1 images.",
+		"error.save_data_file_could_not_be_read": "Le fichier des données de sauvegarde %1 n'a pas pu être lu.",
+		"setting.starttime": "Horloge de départ",
+		"setting.starttime.about": "La date et l'heure que lit le jeu au démarrage, en secondes depuis 1970 (temps Unix), en UTC ; elle avance ensuite avec les images. La valeur par défaut est le 1er janvier 2000. Les nombres aléatoires d'OpenBOR ne dépendent pas d'elle, mais les scripts d'un jeu peuvent lire la date. Il fait partie de la machine : un film a besoin de la même valeur.",
+		"slot.pack": "Jeu",
+		"slot.pack.help": "Le fichier .pak du jeu (les jeux OpenBOR sont leur dossier de données rangé dans un seul .pak).",
+		"slot.savedata": "Données de sauvegarde",
+		"slot.savedata.help": "Les fichiers de sauvegarde propres à OpenBOR pour ce jeu, tels que les écrit Exporter les données de sauvegarde : <jeu>.cfg (les réglages, dont les touches), <jeu>.sav (la progression), <jeu>.hi (les meilleurs scores), <jeu>.scr (ce que gardent les scripts du jeu). Leurs noms doivent être ceux du jeu : les réglages de test.pak sont dans test.cfg. Le jeu démarre avec eux."
+	}
+}

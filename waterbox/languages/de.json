@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Das Spiel (%1) konnte nicht geöffnet werden.",
+		"error.is_not_an_openbor_game": "%1 ist kein OpenBOR-Spiel (eine .pak-Datei beginnt mit PACK).",
+		"error.no_memory_for_the_game_s_stack": "Für den Stapelspeicher des Spiels ist kein Speicher da.",
+		"error.openbor_could_not_load": "OpenBOR konnte das Spiel nicht laden.",
+		"error.openbor_could_not_load_because": "OpenBOR konnte das Spiel nicht laden: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR hat das Laden des Spiels nicht in %1 Bildern beendet.",
+		"error.save_data_file_could_not_be_read": "Die Speicherdatei %1 konnte nicht gelesen werden.",
+		"setting.starttime": "Startzeit der Uhr",
+		"setting.starttime.about": "Das Datum und die Uhrzeit, die das Spiel beim Start liest, in Sekunden seit 1970 (Unix-Zeit), in UTC; danach läuft sie mit den Bildern. Vorgabe ist der 1. Januar 2000. Die eigenen Zufallszahlen von OpenBOR hängen nicht davon ab, aber die Skripte eines Spiels können das Datum lesen. Es gehört zur Maschine, daher braucht ein Film denselben Wert.",
+		"slot.pack": "Spiel",
+		"slot.pack.help": "Die .pak-Datei des Spiels (OpenBOR-Spiele sind ihr Datenordner, in eine einzige .pak-Datei gepackt).",
+		"slot.savedata": "Speicherdaten",
+		"slot.savedata.help": "Die eigenen Speicherdateien von OpenBOR für dieses Spiel, so wie Speicherdaten exportieren sie schreibt: <Spiel>.cfg (die Einstellungen, darunter die Tasten), <Spiel>.sav (der Fortschritt), <Spiel>.hi (die Highscores), <Spiel>.scr (was die Skripte des Spiels behalten). Ihre Namen müssen die des Spiels sein: Die Einstellungen von test.pak heißen test.cfg. Das Spiel startet mit ihnen."
+	}
+}

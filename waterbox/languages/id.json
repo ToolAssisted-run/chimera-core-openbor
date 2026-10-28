@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Game (%1) tidak dapat dibuka.",
+		"error.is_not_an_openbor_game": "%1 bukan game OpenBOR (file .pak dimulai dengan PACK).",
+		"error.no_memory_for_the_game_s_stack": "Tidak ada memori untuk stack game.",
+		"error.openbor_could_not_load": "OpenBOR tidak dapat memuat game.",
+		"error.openbor_could_not_load_because": "OpenBOR tidak dapat memuat game: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR tidak selesai memuat game dalam %1 bingkai.",
+		"error.save_data_file_could_not_be_read": "File data simpanan %1 tidak dapat dibaca.",
+		"setting.starttime": "Jam Awal",
+		"setting.starttime.about": "Tanggal dan waktu yang dibaca game ketika mulai, dalam detik sejak 1970 (waktu Unix), dalam UTC; setelah itu ia berjalan bersama bingkai. Bawaannya adalah 1 Januari 2000. Bilangan acak OpenBOR sendiri tidak bergantung padanya, tetapi skrip game dapat membaca tanggal. Ini bagian dari mesin, sehingga rekaman membutuhkan nilai yang sama.",
+		"slot.pack": "Game",
+		"slot.pack.help": "File .pak game (game OpenBOR adalah folder datanya yang dikemas menjadi satu .pak).",
+		"slot.savedata": "Data simpanan",
+		"slot.savedata.help": "File simpanan OpenBOR sendiri untuk game ini, seperti yang ditulis Ekspor Data Simpanan: <game>.cfg (pengaturan, termasuk tombolnya), <game>.sav (kemajuan), <game>.hi (skor tertinggi), <game>.scr (apa yang disimpan skrip game). Nama mereka harus nama game: pengaturan test.pak adalah test.cfg. Game dimulai dengan file-file ini."
+	}
+}

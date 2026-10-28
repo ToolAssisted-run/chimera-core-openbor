@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Jocul (%1) nu a putut fi deschis.",
+		"error.is_not_an_openbor_game": "%1 nu este un joc OpenBOR (un fișier .pak începe cu PACK).",
+		"error.no_memory_for_the_game_s_stack": "Nu există memorie pentru stiva jocului.",
+		"error.openbor_could_not_load": "OpenBOR nu a putut încărca jocul.",
+		"error.openbor_could_not_load_because": "OpenBOR nu a putut încărca jocul: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR nu a terminat de încărcat jocul în %1 cadre.",
+		"error.save_data_file_could_not_be_read": "Fișierul de date salvate %1 nu a putut fi citit.",
+		"setting.starttime": "Ceasul de pornire",
+		"setting.starttime.about": "Data și ora pe care le citește jocul când pornește, în secunde de la 1970 (ora Unix), în UTC; apoi merge cu cadrele. Implicit este 1 ianuarie 2000. Numerele aleatoare ale OpenBOR nu depind de el, dar scripturile unui joc pot citi data. Face parte din mașină, deci o înregistrare are nevoie de aceeași valoare.",
+		"slot.pack": "Joc",
+		"slot.pack.help": "Fișierul .pak al jocului (jocurile OpenBOR sunt dosarul lor de date împachetat într-un singur .pak).",
+		"slot.savedata": "Date salvate",
+		"slot.savedata.help": "Fișierele de salvare ale OpenBOR pentru acest joc, așa cum le scrie Export Save Data: <joc>.cfg (setările, printre ele tastele), <joc>.sav (progresul), <joc>.hi (cele mai bune scoruri), <joc>.scr (ce păstrează scripturile jocului). Numele lor trebuie să fie ale jocului: setările lui test.pak sunt test.cfg. Jocul pornește cu ele."
+	}
+}

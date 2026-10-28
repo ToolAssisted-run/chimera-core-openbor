@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Het spel (%1) kon niet worden geopend.",
+		"error.is_not_an_openbor_game": "%1 is geen OpenBOR-spel (een .pak-bestand begint met PACK).",
+		"error.no_memory_for_the_game_s_stack": "Er is geen geheugen voor de stack van het spel.",
+		"error.openbor_could_not_load": "OpenBOR kon het spel niet laden.",
+		"error.openbor_could_not_load_because": "OpenBOR kon het spel niet laden: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR was in %1 frames nog niet klaar met het laden van het spel.",
+		"error.save_data_file_could_not_be_read": "Het bestand met opgeslagen gegevens %1 kon niet worden gelezen.",
+		"setting.starttime": "Startklok",
+		"setting.starttime.about": "De datum en tijd die het spel leest wanneer het start, in seconden sinds 1970 (Unix-tijd), in UTC; daarna loopt het mee met de frames. De standaard is 1 januari 2000. De eigen willekeurige getallen van OpenBOR hangen daar niet van af, maar de scripts van een spel kunnen de datum lezen. Het hoort bij de machine, dus een movie heeft dezelfde waarde nodig.",
+		"slot.pack": "Spel",
+		"slot.pack.help": "Het .pak-bestand van het spel (OpenBOR-spellen zijn hun datamap, in één .pak-bestand ingepakt).",
+		"slot.savedata": "Opgeslagen gegevens",
+		"slot.savedata.help": "De eigen opslagbestanden van OpenBOR voor dit spel, zoals Export Save Data ze schrijft: <game>.cfg (de instellingen, waaronder de toetsen), <game>.sav (de voortgang), <game>.hi (de highscores), <game>.scr (wat de scripts van het spel bewaren). Hun namen moeten die van het spel zijn: de instellingen van test.pak zijn test.cfg. Het spel start ermee."
+	}
+}

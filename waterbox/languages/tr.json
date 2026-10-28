@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Oyun (%1) açılamadı.",
+		"error.is_not_an_openbor_game": "%1 bir OpenBOR oyunu değil (.pak dosyası PACK ile başlar).",
+		"error.no_memory_for_the_game_s_stack": "Oyunun yığını için bellek yok.",
+		"error.openbor_could_not_load": "OpenBOR oyunu yükleyemedi.",
+		"error.openbor_could_not_load_because": "OpenBOR oyunu yükleyemedi: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR, oyunu %1 karede yüklemeyi bitiremedi.",
+		"error.save_data_file_could_not_be_read": "Kayıt verisi dosyası %1 okunamadı.",
+		"setting.starttime": "Başlangıç Saati",
+		"setting.starttime.about": "Oyunun başladığında okuduğu tarih ve saat, 1970'ten itibaren saniye olarak (Unix zamanı), UTC'de; sonra karelerle birlikte çalışır. Varsayılan 1 Ocak 2000'dir. OpenBOR'un kendi rastgele sayıları buna bağlı değildir, ama bir oyunun betikleri tarihi okuyabilir. Makinenin bir parçasıdır, bu yüzden bir film aynı değeri ister.",
+		"slot.pack": "Oyun",
+		"slot.pack.help": "Oyunun .pak dosyası (OpenBOR oyunları, veri klasörlerinin tek bir .pak'e paketlenmiş halidir).",
+		"slot.savedata": "Kayıt verisi",
+		"slot.savedata.help": "OpenBOR'un bu oyun için kendi kayıt dosyaları, Export Save Data'nın yazdığı gibi: <oyun>.cfg (ayarlar, içinde tuşlar), <oyun>.sav (ilerleme), <oyun>.hi (yüksek skorlar), <oyun>.scr (oyunun betiklerinin tuttukları). Adları oyunun adı olmalıdır: test.pak'in ayarları test.cfg'dir. Oyun onlarla başlar."
+	}
+}

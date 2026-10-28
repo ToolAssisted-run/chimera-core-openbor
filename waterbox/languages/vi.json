@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Không mở được trò chơi (%1).",
+		"error.is_not_an_openbor_game": "%1 không phải là trò chơi OpenBOR (một tệp .pak bắt đầu bằng PACK).",
+		"error.no_memory_for_the_game_s_stack": "Không có bộ nhớ cho ngăn xếp của trò chơi.",
+		"error.openbor_could_not_load": "OpenBOR không tải được trò chơi.",
+		"error.openbor_could_not_load_because": "OpenBOR không tải được trò chơi: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR chưa tải xong trò chơi sau %1 khung hình.",
+		"error.save_data_file_could_not_be_read": "Không đọc được tệp dữ liệu lưu %1.",
+		"setting.starttime": "Đồng hồ khi bắt đầu",
+		"setting.starttime.about": "Ngày và giờ mà trò chơi đọc khi nó bắt đầu, tính bằng giây từ năm 1970 (thời gian Unix), theo UTC; sau đó nó chạy theo các khung hình. Mặc định là ngày 1 tháng 1 năm 2000. Số ngẫu nhiên riêng của OpenBOR không phụ thuộc vào nó, nhưng các kịch bản của trò chơi có thể đọc ngày. Đây là một phần của máy, nên một bản ghi cần cùng giá trị.",
+		"slot.pack": "Trò chơi",
+		"slot.pack.help": "Tệp .pak của trò chơi (trò chơi OpenBOR là thư mục dữ liệu của chúng được nén thành một tệp .pak).",
+		"slot.savedata": "Dữ liệu lưu",
+		"slot.savedata.help": "Các tệp lưu riêng của OpenBOR cho trò chơi này, như Export Save Data ghi chúng: <trò chơi>.cfg (các thiết lập, trong đó có các phím), <trò chơi>.sav (tiến trình), <trò chơi>.hi (điểm cao), <trò chơi>.scr (những gì các kịch bản của trò chơi giữ). Tên của chúng phải là tên của trò chơi: thiết lập của test.pak là test.cfg. Trò chơi bắt đầu với chúng."
+	}
+}

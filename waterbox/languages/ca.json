@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "No s'ha pogut obrir el joc (%1).",
+		"error.is_not_an_openbor_game": "%1 no és un joc d'OpenBOR (un fitxer .pak comença amb PACK).",
+		"error.no_memory_for_the_game_s_stack": "No hi ha memòria per a la pila del joc.",
+		"error.openbor_could_not_load": "OpenBOR no ha pogut carregar el joc.",
+		"error.openbor_could_not_load_because": "OpenBOR no ha pogut carregar el joc: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR no ha acabat de carregar el joc en %1 fotogrames.",
+		"error.save_data_file_could_not_be_read": "No s'ha pogut llegir el fitxer de dades desades %1.",
+		"setting.starttime": "Rellotge d'inici",
+		"setting.starttime.about": "La data i hora que llegeix el joc quan s'inicia, en segons des de 1970 (temps Unix), en UTC; després va amb els fotogrames. El valor per defecte és l'u de gener del 2000. Els nombres aleatoris propis d'OpenBOR no en depenen, però els scripts d'un joc poden llegir la data. Forma part de la màquina, així que una pel·lícula necessita el mateix valor.",
+		"slot.pack": "Joc",
+		"slot.pack.help": "El fitxer .pak del joc (els jocs d'OpenBOR són la seua carpeta de dades empaquetada en un sol .pak).",
+		"slot.savedata": "Dades desades",
+		"slot.savedata.help": "Els fitxers de desats propis d'OpenBOR per a aquest joc, tal com els escriu Exporta les dades desades: <joc>.cfg (les configuracions, entre elles les tecles), <joc>.sav (el progrés), <joc>.hi (les puntuacions màximes), <joc>.scr (el que guarden els scripts del joc). Els seus noms han de ser els del joc: les configuracions de test.pak són test.cfg. El joc s'inicia amb ells."
+	}
+}

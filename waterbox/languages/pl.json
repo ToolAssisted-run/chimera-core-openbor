@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Nie udało się otworzyć gry (%1).",
+		"error.is_not_an_openbor_game": "%1 nie jest grą OpenBOR (plik .pak zaczyna się od PACK).",
+		"error.no_memory_for_the_game_s_stack": "Brak pamięci na stos gry.",
+		"error.openbor_could_not_load": "OpenBOR nie mógł wczytać gry.",
+		"error.openbor_could_not_load_because": "OpenBOR nie mógł wczytać gry: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR nie skończył wczytywania gry w %1 klatkach.",
+		"error.save_data_file_could_not_be_read": "Nie udało się odczytać pliku zapisu gry %1.",
+		"setting.starttime": "Zegar startowy",
+		"setting.starttime.about": "Data i godzina, które gra odczytuje przy starcie, w sekundach od 1970 (czas Unix), w UTC; potem biegnie z klatkami. Domyślnie jest to 1 stycznia 2000. Liczby losowe OpenBOR od niego nie zależą, ale skrypty gry mogą odczytać datę. Jest częścią maszyny, więc nagranie potrzebuje tej samej wartości.",
+		"slot.pack": "Gra",
+		"slot.pack.help": "Plik .pak gry OpenBOR (gry OpenBOR to ich folder z danymi spakowany w jeden .pak).",
+		"slot.savedata": "Zapis gry",
+		"slot.savedata.help": "Własne pliki zapisu OpenBOR dla tej gry, tak jak zapisuje je Export Save Data: <gra>.cfg (ustawienia, w tym klawisze), <gra>.sav (postęp), <gra>.hi (wyniki), <gra>.scr (to, co trzymają skrypty gry). Ich nazwy muszą być nazwami gry: ustawienia test.pak to test.cfg. Gra startuje z nimi."
+	}
+}

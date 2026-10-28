@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "ゲーム(%1)を開けませんでした。",
+		"error.is_not_an_openbor_game": "%1 はOpenBORのゲームではありません(.pak ファイルは PACK で始まります)。",
+		"error.no_memory_for_the_game_s_stack": "ゲームのスタック用のメモリがありません。",
+		"error.openbor_could_not_load": "OpenBORはゲームを読み込めませんでした。",
+		"error.openbor_could_not_load_because": "OpenBORはゲームを読み込めませんでした: %1",
+		"error.openbor_did_not_finish_loading": "OpenBORは、%1 フレーム以内にゲームの読み込みを終えませんでした。",
+		"error.save_data_file_could_not_be_read": "セーブデータのファイル %1 を読み込めませんでした。",
+		"setting.starttime": "開始時刻",
+		"setting.starttime.about": "ゲームが起動するときに読む日付と時刻。1970年からの秒数(Unix時間)で、UTCです。そこからフレームと一緒に進みます。既定値は2000年1月1日です。OpenBOR自身の乱数はこれに依存しませんが、ゲームのスクリプトは日付を読めます。機種の一部なので、ムービーには同じ値が必要です。",
+		"slot.pack": "ゲーム",
+		"slot.pack.help": "ゲームの .pak ファイル(OpenBORのゲームは、データのフォルダーを1つの .pak にまとめたものです)。",
+		"slot.savedata": "セーブデータ",
+		"slot.savedata.help": "このゲームのOpenBOR自身のセーブファイル。「セーブデータを書き出す」が書き出すもので、<game>.cfg(設定。キーも含む)、<game>.sav(進行状況)、<game>.hi(ハイスコア)、<game>.scr(ゲームのスクリプトが保存するもの)です。名前はゲームの名前と一致している必要があります。test.pak の設定は test.cfg です。ゲームはこれらを使って始まります。"
+	}
+}

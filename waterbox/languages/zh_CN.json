@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "无法打开游戏（%1）。",
+		"error.is_not_an_openbor_game": "%1 不是 OpenBOR 游戏（.pak 文件以 PACK 开头）。",
+		"error.no_memory_for_the_game_s_stack": "没有供游戏堆栈使用的内存。",
+		"error.openbor_could_not_load": "OpenBOR 无法加载游戏。",
+		"error.openbor_could_not_load_because": "OpenBOR 无法加载游戏：%1",
+		"error.openbor_did_not_finish_loading": "OpenBOR 未能在 %1 帧内加载完游戏。",
+		"error.save_data_file_could_not_be_read": "无法读取存档数据文件 %1。",
+		"setting.starttime": "起始时钟",
+		"setting.starttime.about": "游戏启动时读取的日期和时间，以自 1970 年起的秒数（Unix 时间，UTC 时区）表示；此后它随帧一起运行。默认为 2000 年 1 月 1 日。OpenBOR 自己的随机数不依赖于它，但游戏脚本可以读取该日期。它属于机型的一部分，因此录像需要相同的值。",
+		"slot.pack": "游戏",
+		"slot.pack.help": "游戏的 .pak 文件（OpenBOR 游戏是将其数据文件夹打包成的一个 .pak）。",
+		"slot.savedata": "存档数据",
+		"slot.savedata.help": "OpenBOR 为此游戏保存的文件，即由“导出存档数据”写出的内容：<游戏>.cfg（设置，其中包括按键）、<游戏>.sav（进度）、<游戏>.hi（最高分）、<游戏>.scr（游戏脚本保存的内容）。它们的名称必须与游戏相同：test.pak 的设置是 test.cfg。游戏会使用这些文件开始。"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Peliä (%1) ei voitu avata.",
+		"error.is_not_an_openbor_game": "%1 ei ole OpenBOR-peli (.pak-tiedosto alkaa sanalla PACK).",
+		"error.no_memory_for_the_game_s_stack": "Pelin pinolle ei ole muistia.",
+		"error.openbor_could_not_load": "OpenBOR ei voinut ladata peliä.",
+		"error.openbor_could_not_load_because": "OpenBOR ei voinut ladata peliä: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR ei saanut peliä ladatuksi %1 kehyksessä.",
+		"error.save_data_file_could_not_be_read": "Tallennustiedostoa %1 ei voitu lukea.",
+		"setting.starttime": "Alkukello",
+		"setting.starttime.about": "Päivä ja kellonaika, jonka peli lukee käynnistyessään, sekunteina vuodesta 1970 (Unix-aika), UTC-aikana; se käy sitten kehysten mukana. Oletus on 1. tammikuuta 2000. OpenBORin omat satunnaisluvut eivät riipu siitä, mutta pelin skriptit voivat lukea päivämäärän. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
+		"slot.pack": "Peli",
+		"slot.pack.help": "Pelin .pak-tiedosto (OpenBOR-pelit ovat datakansionsa pakattuna yhteen .pak-tiedostoon).",
+		"slot.savedata": "Tallennustiedot",
+		"slot.savedata.help": "OpenBORin omat tallennustiedostot tälle pelille, sellaisina kuin Vie tallennustiedot ne kirjoittaa: <peli>.cfg (asetukset, niiden joukossa näppäimet), <peli>.sav (eteneminen), <peli>.hi (ennätykset), <peli>.scr (se, mitä pelin skriptit säilyttävät). Niiden nimien täytyy olla pelin: test.pakin asetukset ovat test.cfg. Peli alkaa niiden kanssa."
+	}
+}

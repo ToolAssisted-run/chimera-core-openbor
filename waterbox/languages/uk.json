@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Гру (%1) не вдалося відкрити.",
+		"error.is_not_an_openbor_game": "%1 не є грою OpenBOR (файл .pak починається з PACK).",
+		"error.no_memory_for_the_game_s_stack": "Немає пам'яті для стека гри.",
+		"error.openbor_could_not_load": "OpenBOR не зміг завантажити гру.",
+		"error.openbor_could_not_load_because": "OpenBOR не зміг завантажити гру: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR не закінчив завантаження гри за %1 кадрів.",
+		"error.save_data_file_could_not_be_read": "Файл даних збережень %1 не вдалося прочитати.",
+		"setting.starttime": "Початковий годинник",
+		"setting.starttime.about": "Дата і час, які гра читає при старті, у секундах від 1970 року (час Unix), в UTC; далі він іде разом із кадрами. Типове значення — 1 січня 2000 року. Випадкові числа самого OpenBOR від нього не залежать, але сценарії гри можуть читати дату. Це частина машини, тож запис потребує того самого значення.",
+		"slot.pack": "Гра",
+		"slot.pack.help": "Файл .pak гри (ігри OpenBOR — це їхня папка даних, упакована в один .pak).",
+		"slot.savedata": "Дані збережень",
+		"slot.savedata.help": "Власні файли збережень OpenBOR для цієї гри, як їх записує Export Save Data: <game>.cfg (налаштування, серед них клавіші), <game>.sav (прогрес), <game>.hi (рекорди), <game>.scr (те, що зберігають сценарії гри). Їхні назви мають бути назвою гри: налаштування test.pak — це test.cfg. Гра стартує з ними."
+	}
+}

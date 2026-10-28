@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Hru (%1) se nepodařilo otevřít.",
+		"error.is_not_an_openbor_game": "%1 není hra OpenBOR (soubor .pak začíná na PACK).",
+		"error.no_memory_for_the_game_s_stack": "Pro zásobník hry není paměť.",
+		"error.openbor_could_not_load": "OpenBOR nemohl hru načíst.",
+		"error.openbor_could_not_load_because": "OpenBOR nemohl hru načíst: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR nedokončil načítání hry za %1 snímků.",
+		"error.save_data_file_could_not_be_read": "Soubor uložených dat %1 se nepodařilo přečíst.",
+		"setting.starttime": "Počáteční hodiny",
+		"setting.starttime.about": "Datum a čas, které hra přečte, když začne, v sekundách od roku 1970 (Unix time), v UTC; pak běží se snímky. Výchozí je 1. ledna 2000. Vlastní náhodná čísla OpenBOR na tom nezávisí, ale skripty hry mohou číst datum. Je součástí stroje, takže film potřebuje stejnou hodnotu.",
+		"slot.pack": "Hra",
+		"slot.pack.help": "Soubor .pak hry (hry OpenBOR jsou jejich datová složka zabalená do jednoho souboru .pak).",
+		"slot.savedata": "Uložená data",
+		"slot.savedata.help": "Vlastní soubory uložených her OpenBOR pro tuto hru, jak je zapisuje Export Save Data: <hra>.cfg (nastavení, mezi nimi klávesy), <hra>.sav (postup), <hra>.hi (nejvyšší skóre), <hra>.scr (co drží skripty hry). Jejich názvy musí být názvy hry: nastavení test.pak je test.cfg. Hra se s nimi spustí."
+	}
+}

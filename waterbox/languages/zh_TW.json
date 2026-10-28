@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "無法開啟遊戲(%1)。",
+		"error.is_not_an_openbor_game": "%1 不是 OpenBOR 遊戲(.pak 檔案以 PACK 開頭)。",
+		"error.no_memory_for_the_game_s_stack": "沒有遊戲堆疊所需的記憶體。",
+		"error.openbor_could_not_load": "OpenBOR 無法載入遊戲。",
+		"error.openbor_could_not_load_because": "OpenBOR 無法載入遊戲:%1",
+		"error.openbor_did_not_finish_loading": "OpenBOR 在 %1 個影格內未能完成載入遊戲。",
+		"error.save_data_file_could_not_be_read": "無法讀取存檔資料檔案 %1。",
+		"setting.starttime": "開機時鐘",
+		"setting.starttime.about": "遊戲開始時讀取的日期與時間,以 1970 年起的秒數計(Unix 時間),採 UTC;之後隨影格運行。預設為 2000 年 1 月 1 日。OpenBOR 自己的亂數不取決於它,但遊戲的腳本可以讀取日期。它屬於機器的一部分,因此錄影需要相同的值。",
+		"slot.pack": "遊戲",
+		"slot.pack.help": "遊戲的 .pak 檔(OpenBOR 遊戲是把其資料資料夾打包成一個 .pak)。",
+		"slot.savedata": "存檔",
+		"slot.savedata.help": "此遊戲的 OpenBOR 自身存檔,由「匯出存檔資料」寫出:<遊戲>.cfg(設定,包括按鍵)、<遊戲>.sav(進度)、<遊戲>.hi(高分)、<遊戲>.scr(遊戲腳本所保存的內容)。它們的名稱必須與遊戲的名稱相同:test.pak 的設定是 test.cfg。遊戲會帶著它們開始。"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "A játékot (%1) nem lehetett megnyitni.",
+		"error.is_not_an_openbor_game": "%1 nem OpenBOR-játék (a .pak fájl PACK-kel kezdődik).",
+		"error.no_memory_for_the_game_s_stack": "Nincs memória a játék vermének.",
+		"error.openbor_could_not_load": "Az OpenBOR nem tudta betölteni a játékot.",
+		"error.openbor_could_not_load_because": "Az OpenBOR nem tudta betölteni a játékot: %1",
+		"error.openbor_did_not_finish_loading": "Az OpenBOR %1 képkockán belül nem fejezte be a játék betöltését.",
+		"error.save_data_file_could_not_be_read": "A(z) %1 mentési adatfájl nem olvasható.",
+		"setting.starttime": "Kezdő óra",
+		"setting.starttime.about": "A dátum és idő, amelyet a játék indításkor olvas, másodpercben 1970 óta (Unix-idő), UTC-ben; utána a képkockákkal fut. Az alapérték 2000. január 1. Az OpenBOR saját véletlenszámai nem függnek tőle, de a játék szkriptjei olvashatják a dátumot. A gép része, ezért a felvételhez ugyanez az érték kell.",
+		"slot.pack": "Játék",
+		"slot.pack.help": "A játék .pak fájlja (az OpenBOR-játékok az adatmappájuk egy .pak-ba csomagolva).",
+		"slot.savedata": "Mentési adatok",
+		"slot.savedata.help": "Az OpenBOR saját mentési fájljai ehhez a játékhoz, ahogyan az Mentési adatok exportálása írja: <játék>.cfg (a beállítások, köztük a billentyűk), <játék>.sav (az előrehaladás), <játék>.hi (a rekordok), <játék>.scr (amit a játék szkriptjei tartanak). A nevüknek a játékéval kell egyezniük: a test.pak beállításai test.cfg. A játék ezekkel indul."
+	}
+}

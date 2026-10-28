@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "Spillet (%1) kunne ikke åbnes.",
+		"error.is_not_an_openbor_game": "%1 er ikke et OpenBOR-spil (en .pak-fil begynder med PACK).",
+		"error.no_memory_for_the_game_s_stack": "Der er ingen hukommelse til spillets stak.",
+		"error.openbor_could_not_load": "OpenBOR kunne ikke indlæse spillet.",
+		"error.openbor_could_not_load_because": "OpenBOR kunne ikke indlæse spillet: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR blev ikke færdig med at indlæse spillet på %1 billeder.",
+		"error.save_data_file_could_not_be_read": "Filen med gemte data %1 kunne ikke læses.",
+		"setting.starttime": "Startur",
+		"setting.starttime.about": "Dato og klokkeslæt, spillet læser, når det starter, i sekunder siden 1970 (Unix-tid), i UTC; det løber så med billederne. Standarden er 1. januar 2000. OpenBORs egne tilfældige tal afhænger ikke af det, men et spils scripts kan læse datoen. Den hører til maskinen, så en optagelse skal have samme værdi.",
+		"slot.pack": "Spil",
+		"slot.pack.help": "Spillets .pak-fil (OpenBOR-spil er deres datamappe pakket i én .pak).",
+		"slot.savedata": "Gemte data",
+		"slot.savedata.help": "OpenBORs egne gemte filer til dette spil, sådan som Eksportér gemte data skriver dem: <spil>.cfg (indstillingerne, tasterne blandt dem), <spil>.sav (fremskridtet), <spil>.hi (highscores), <spil>.scr (det spillets scripts gemmer). Deres navne skal være spillets: test.paks indstillinger er test.cfg. Spillet starter med dem."
+	}
+}
