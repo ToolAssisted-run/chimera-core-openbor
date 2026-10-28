@@ -51,6 +51,11 @@
 #include "coroutine.h"
 #include "openbor-driver.h"
 
+/* A text a person reads is a key of languages/en.json, each of its
+ * arguments after a TEXT_ARG (chimera docs/translations.md). TEXT_ARG is a
+ * string of its own so the byte after it is never read as more of its hex. */
+#define TEXT_ARG "\x1f"
+
 FILE *__real_fopen(const char *path, const char *mode);
 int openbor_sdl_main(int argc, char *argv[]);
 
@@ -450,7 +455,7 @@ int bordrv_init(char *err, int errsz)
 	FILE *pf = __real_fopen(g.pack, "rb");
 	if (!pf)
 	{
-		snprintf(err, (size_t)errsz, "the game (%s) could not be opened", g.pack);
+		snprintf(err, (size_t)errsz, "error.game_could_not_be_opened" TEXT_ARG "%s", g.pack);
 		return 0;
 	}
 	char magic[4] = { 0 };
@@ -458,7 +463,7 @@ int bordrv_init(char *err, int errsz)
 	fclose(pf);
 	if (got != sizeof magic || memcmp(magic, "PACK", 4) != 0)
 	{
-		snprintf(err, (size_t)errsz, "%s is not an OpenBOR game (a .pak file starts with PACK)", g.pack);
+		snprintf(err, (size_t)errsz, "error.is_not_an_openbor_game" TEXT_ARG "%s", g.pack);
 		return 0;
 	}
 
@@ -468,7 +473,7 @@ int bordrv_init(char *err, int errsz)
 		char name[512];
 		if (wbx_slot_name("savedata", i, name, sizeof name) && !seed_save(name))
 		{
-			snprintf(err, (size_t)errsz, "the save data file %s could not be read", name);
+			snprintf(err, (size_t)errsz, "error.save_data_file_could_not_be_read" TEXT_ARG "%s", name);
 			return 0;
 		}
 	}
@@ -480,7 +485,7 @@ int bordrv_init(char *err, int errsz)
 	g.game_sp = chimera_co_create(8u << 20);
 	if (!g.game_sp)
 	{
-		snprintf(err, (size_t)errsz, "no memory for the game's stack");
+		snprintf(err, (size_t)errsz, "error.no_memory_for_the_game_s_stack");
 		return 0;
 	}
 	do
@@ -490,13 +495,17 @@ int bordrv_init(char *err, int errsz)
 	} while (!g.started && !g.over && g.frames < BOR_LOAD_FRAMES);
 	if (!g.started && !g.over)
 	{
-		snprintf(err, (size_t)errsz, "OpenBOR did not finish loading the game in %d frames", BOR_LOAD_FRAMES);
+		snprintf(err, (size_t)errsz, "error.openbor_did_not_finish_loading" TEXT_ARG "%d", BOR_LOAD_FRAMES);
 		return 0;
 	}
 	if (g.over)
 	{
 		const char *why = g.stopped[0] ? g.stopped : g.message;
-		snprintf(err, (size_t)errsz, "OpenBOR could not load the game%s%s", why[0] ? ": " : "", why);
+		/* why is OpenBOR's own message, shown as it gave it */
+		if (why[0])
+			snprintf(err, (size_t)errsz, "error.openbor_could_not_load_because" TEXT_ARG "%s", why);
+		else
+			snprintf(err, (size_t)errsz, "error.openbor_could_not_load");
 		return 0;
 	}
 	return 1;

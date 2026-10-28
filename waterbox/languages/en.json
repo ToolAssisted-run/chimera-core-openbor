@@ -1,0 +1,17 @@
+{
+	"texts": {
+		"error.game_could_not_be_opened": "The game (%1) could not be opened.",
+		"error.is_not_an_openbor_game": "%1 is not an OpenBOR game (a .pak file starts with PACK).",
+		"error.no_memory_for_the_game_s_stack": "There is no memory for the game's stack.",
+		"error.openbor_could_not_load": "OpenBOR could not load the game.",
+		"error.openbor_could_not_load_because": "OpenBOR could not load the game: %1",
+		"error.openbor_did_not_finish_loading": "OpenBOR did not finish loading the game in %1 frames.",
+		"error.save_data_file_could_not_be_read": "The save data file %1 could not be read.",
+		"setting.starttime": "Starting Clock",
+		"setting.starttime.about": "The date and time the game reads when it starts, in seconds since 1970 (Unix time), in UTC; it then runs with the frames. The default is the first of January 2000. OpenBOR's own random numbers do not depend on it, but a game's scripts can read the date. It is part of the machine, so a movie needs the same value.",
+		"slot.pack": "Game",
+		"slot.pack.help": "The game's .pak file (OpenBOR games are their data folder packed into one .pak).",
+		"slot.savedata": "Save data",
+		"slot.savedata.help": "OpenBOR's own save files for this game, as Export Save Data writes them: <game>.cfg (the settings, the keys among them), <game>.sav (the progress), <game>.hi (the high scores), <game>.scr (what the game's scripts keep). Their names must be the game's: test.pak's settings are test.cfg. The game starts with them."
+	}
+}

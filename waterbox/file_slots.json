@@ -3,17 +3,17 @@
   "slots": [
     {
       "id": "pack",
-      "title": "Game",
+      "title": "slot.pack",
       "min": 1,
       "max": 1,
       "formats": [
         "pak"
       ],
-      "help": "The game's .pak file (OpenBOR games are their data folder packed into one .pak)."
+      "help": "slot.pack.help"
     },
     {
       "id": "savedata",
-      "title": "Save data",
+      "title": "slot.savedata",
       "min": 0,
       "max": 8,
       "formats": [
@@ -22,7 +22,7 @@
         "hi",
         "scr"
       ],
-      "help": "OpenBOR's own save files for this game, as Export Save Data writes them: <game>.cfg (the settings, the keys among them), <game>.sav (the progress), <game>.hi (the high scores), <game>.scr (what the game's scripts keep). Their names must be the game's: test.pak's settings are test.cfg. The game starts with them."
+      "help": "slot.savedata.help"
     }
   ]
 }

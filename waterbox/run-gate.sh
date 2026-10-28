@@ -293,12 +293,12 @@ echo "== refusals"
 mkdir -p "$work/nopak"
 printf '{"pack":["missing.pak"]}' > "$work/nopak/slots"; printf '{}' > "$work/nopak/settings"
 "$native" "$work/nopak" --frames 1 > "$work/nopak.txt" 2> /dev/null
-has refusals "$work/nopak.txt" "loadError=the game (missing.pak) could not be opened" "a game that is not there says so"
+has refusals "$work/nopak.txt" "loadError=error.game_could_not_be_opened"$'\x1f'"missing.pak" "a game that is not there says so"
 mkdir -p "$work/notpak"
 head -c 4096 /dev/zero | tr '\0' 'x' > "$work/notpak/game.pak"
 printf '{"pack":["game.pak"]}' > "$work/notpak/slots"; printf '{}' > "$work/notpak/settings"
 "$wbx" "$core" "$work/notpak" --frames 1 > "$work/notpak.txt" 2> /dev/null
-has refusals "$work/notpak.txt" "loadError=game.pak is not an OpenBOR game (a .pak file starts with PACK)" "a file that is not a .pak says so (in the sandbox)"
+has refusals "$work/notpak.txt" "loadError=error.is_not_an_openbor_game"$'\x1f'"game.pak" "a file that is not a .pak says so (in the sandbox)"
 mkdir -p "$work/nolevels"
 python3 - "$root/tests/make-test-pak.py" "$work/nolevels/game.pak" <<'PY'
 import importlib.util, sys
@@ -309,7 +309,7 @@ open(sys.argv[2], "wb").write(pak.pak([f for f in pak.files() if f[0] != "data/l
 PY
 printf '{"pack":["game.pak"]}' > "$work/nolevels/slots"; printf '{}' > "$work/nolevels/settings"
 "$wbx" "$core" "$work/nolevels" --frames 1 > "$work/nolevels.txt" 2> /dev/null
-has refusals "$work/nolevels.txt" "loadError=OpenBOR could not load the game: Error loading level list from data/levels.txt" "a .pak OpenBOR cannot load is refused when it is opened, with OpenBOR's reason"
+has refusals "$work/nolevels.txt" "loadError=error.openbor_could_not_load_because"$'\x1f'"Error loading level list from data/levels.txt" "a .pak OpenBOR cannot load is refused when it is opened, with OpenBOR's reason"
 
 echo
 echo "$passed passed, $fails failed"
