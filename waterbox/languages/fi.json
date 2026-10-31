@@ -8,10 +8,10 @@
 		"error.openbor_did_not_finish_loading": "OpenBOR ei saanut peliä ladatuksi %1 kehyksessä.",
 		"error.save_data_file_could_not_be_read": "Tallennustiedostoa %1 ei voitu lukea.",
 		"setting.starttime": "Alkukello",
-		"setting.starttime.about": "Päivä ja kellonaika, jonka peli lukee käynnistyessään, sekunteina vuodesta 1970 (Unix-aika), UTC-aikana; se käy sitten kehysten mukana. Oletus on 1. tammikuuta 2000. OpenBORin omat satunnaisluvut eivät riipu siitä, mutta pelin skriptit voivat lukea päivämäärän. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
+		"setting.starttime.about": "Päivä ja kellonaika, jonka peli lukee käynnistyessään, sekunteina vuodesta 1970 (Unix-aika), UTC-aikana; se käy sitten kehysten mukana. Oletus on 1. tammikuuta 2000. OpenBOR-moottorin omat satunnaisluvut eivät riipu siitä, mutta pelin skriptit voivat lukea päivämäärän. Tämä kuuluu koneeseen, joten tallenne tarvitsee saman arvon.",
 		"slot.pack": "Peli",
 		"slot.pack.help": "Pelin .pak-tiedosto (OpenBOR-pelit ovat datakansionsa pakattuna yhteen .pak-tiedostoon).",
 		"slot.savedata": "Tallennustiedot",
-		"slot.savedata.help": "OpenBORin omat tallennustiedostot tälle pelille, sellaisina kuin Vie tallennustiedot ne kirjoittaa: <peli>.cfg (asetukset, niiden joukossa näppäimet), <peli>.sav (eteneminen), <peli>.hi (ennätykset), <peli>.scr (se, mitä pelin skriptit säilyttävät). Niiden nimien täytyy olla pelin: test.pakin asetukset ovat test.cfg. Peli alkaa niiden kanssa."
+		"slot.savedata.help": "OpenBOR-moottorin omat tallennustiedostot tälle pelille, sellaisina kuin Vie tallennustiedot ne kirjoittaa: <peli>.cfg (asetukset, niiden joukossa näppäimet), <peli>.sav (eteneminen), <peli>.hi (ennätykset), <peli>.scr (se, mitä pelin skriptit säilyttävät). Niiden nimien täytyy olla pelin: test.pakin asetukset ovat test.cfg. Peli alkaa niiden kanssa."
 	}
 }

@@ -8,10 +8,10 @@
 		"error.openbor_did_not_finish_loading": "OpenBOR blev ikke færdig med at indlæse spillet på %1 billeder.",
 		"error.save_data_file_could_not_be_read": "Filen med gemte data %1 kunne ikke læses.",
 		"setting.starttime": "Startur",
-		"setting.starttime.about": "Dato og klokkeslæt, spillet læser, når det starter, i sekunder siden 1970 (Unix-tid), i UTC; det løber så med billederne. Standarden er 1. januar 2000. OpenBORs egne tilfældige tal afhænger ikke af det, men et spils scripts kan læse datoen. Den hører til maskinen, så en optagelse skal have samme værdi.",
+		"setting.starttime.about": "Dato og klokkeslæt, spillet læser, når det starter, i sekunder siden 1970 (Unix-tid), i UTC; det løber så med billederne. Standarden er 1. januar 2000. De tilfældige tal i OpenBOR selv afhænger ikke af det, men et spils scripts kan læse datoen. Den hører til maskinen, så en optagelse skal have samme værdi.",
 		"slot.pack": "Spil",
 		"slot.pack.help": "Spillets .pak-fil (OpenBOR-spil er deres datamappe pakket i én .pak).",
 		"slot.savedata": "Gemte data",
-		"slot.savedata.help": "OpenBORs egne gemte filer til dette spil, sådan som Eksportér gemte data skriver dem: <spil>.cfg (indstillingerne, tasterne blandt dem), <spil>.sav (fremskridtet), <spil>.hi (highscores), <spil>.scr (det spillets scripts gemmer). Deres navne skal være spillets: test.paks indstillinger er test.cfg. Spillet starter med dem."
+		"slot.savedata.help": "Gemte filer fra OpenBOR selv til dette spil, sådan som Eksportér gemte data skriver dem: <spil>.cfg (indstillingerne, tasterne blandt dem), <spil>.sav (fremskridtet), <spil>.hi (highscores), <spil>.scr (det spillets scripts gemmer). Deres navne skal være spillets: test.paks indstillinger er test.cfg. Spillet starter med dem."
 	}
 }

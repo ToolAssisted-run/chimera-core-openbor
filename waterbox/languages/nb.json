@@ -8,10 +8,10 @@
 		"error.openbor_did_not_finish_loading": "OpenBOR ble ikke ferdig med å laste spillet på %1 rammer.",
 		"error.save_data_file_could_not_be_read": "Filen med lagrede data %1 kunne ikke leses.",
 		"setting.starttime": "Startklokke",
-		"setting.starttime.about": "Datoen og klokkeslettet spillet leser når det starter, i sekunder siden 1970 (Unix-tid), i UTC; den går deretter med rammene. Standarden er 1. januar 2000. OpenBORs egne tilfeldige tall avhenger ikke av den, men spillets skript kan lese datoen. Den er en del av maskinen, så en filmfil trenger samme verdi.",
+		"setting.starttime.about": "Datoen og klokkeslettet spillet leser når det starter, i sekunder siden 1970 (Unix-tid), i UTC; den går deretter med rammene. Standarden er 1. januar 2000. De tilfeldige tallene i OpenBOR selv avhenger ikke av den, men spillets skript kan lese datoen. Den er en del av maskinen, så en filmfil trenger samme verdi.",
 		"slot.pack": "Spill",
 		"slot.pack.help": "Spillets .pak-fil (OpenBOR-spill er datamappen deres pakket inn i én .pak-fil).",
 		"slot.savedata": "Lagrede data",
-		"slot.savedata.help": "OpenBORs egne lagringsfiler for dette spillet, slik Eksporter lagrede data skriver dem: <spill>.cfg (innstillingene, tastene blant dem), <spill>.sav (fremdriften), <spill>.hi (poengene), <spill>.scr (det spillets skript lagrer). Navnene må være spillets: test.paks innstillinger er test.cfg. Spillet starter med dem."
+		"slot.savedata.help": "Lagringsfilene til OpenBOR selv for dette spillet, slik Eksporter lagrede data skriver dem: <spill>.cfg (innstillingene, tastene blant dem), <spill>.sav (fremdriften), <spill>.hi (poengene), <spill>.scr (det spillets skript lagrer). Navnene må være spillets: test.paks innstillinger er test.cfg. Spillet starter med dem."
 	}
 }

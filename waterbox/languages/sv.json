@@ -8,10 +8,10 @@
 		"error.openbor_did_not_finish_loading": "OpenBOR blev inte klar med att läsa in spelet på %1 bildrutor.",
 		"error.save_data_file_could_not_be_read": "Filen för sparad data %1 kunde inte läsas.",
 		"setting.starttime": "Startklocka",
-		"setting.starttime.about": "Datum och tid som spelet läser när det startar, i sekunder sedan 1970 (Unixtid), i UTC; den går sedan med bildrutorna. Standardvärdet är den 1 januari 2000. OpenBORs egna slumptal beror inte på den, men ett spels skript kan läsa datumet. Den hör till maskinen, så en inspelning behöver samma värde.",
+		"setting.starttime.about": "Datum och tid som spelet läser när det startar, i sekunder sedan 1970 (Unixtid), i UTC; den går sedan med bildrutorna. Standardvärdet är den 1 januari 2000. Slumptalen i OpenBOR själv beror inte på den, men ett spels skript kan läsa datumet. Den hör till maskinen, så en inspelning behöver samma värde.",
 		"slot.pack": "Spel",
 		"slot.pack.help": "Spelets .pak-fil (OpenBOR-spel är sin datamapp packad i en enda .pak).",
 		"slot.savedata": "Sparad data",
-		"slot.savedata.help": "OpenBORs egna sparfiler för det här spelet, så som Exportera sparad data skriver dem: <spel>.cfg (inställningarna, bland dem tangenterna), <spel>.sav (framstegen), <spel>.hi (highscore), <spel>.scr (det som spelets skript sparar). Deras namn måste vara spelets: test.paks inställningar är test.cfg. Spelet startar med dem."
+		"slot.savedata.help": "Sparfilerna från OpenBOR själv för det här spelet, så som Exportera sparad data skriver dem: <spel>.cfg (inställningarna, bland dem tangenterna), <spel>.sav (framstegen), <spel>.hi (highscore), <spel>.scr (det som spelets skript sparar). Deras namn måste vara spelets: test.paks inställningar är test.cfg. Spelet startar med dem."
 	}
 }
