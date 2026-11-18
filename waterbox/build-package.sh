@@ -55,6 +55,9 @@ cp -r "$here/languages" "$staging/languages"
 # the terms travel with the binary: OpenBOR (BSD-3-Clause) and the
 # libraries are somebody else's work (see waterbox/package-licenses.json)
 python3 "$mb/source/guest/package-licenses.py" "$root" "$staging"
+# this core's windows in Chimera's Emulator menu: miniBox's ready-made ones
+# for what core.wbx exports, their design and texts (Chimera issue 610)
+python3 "$mb/source/guest/windows/add-windows.py" "$staging"
 
 # ---- version (see chimera docs: commit-as-version, stamped by CD) ----
 core_version="${CORE_VERSION:-}"
